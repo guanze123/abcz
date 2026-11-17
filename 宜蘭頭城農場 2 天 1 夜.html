@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>宜蘭頭城農場 2 天 1 夜</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Huninn&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#FFFCF6;--ink:#3E3A39;--pink:#F2A497;--yellow:#F6D27A;--aqua:#A8D3E6;--green:#B9DAA5;color-scheme:light;
+box-sizing:border-box}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:calc(72px + env(safe-area-inset-top,0px))}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:"Huninn","PingFang TC","Noto Sans TC","Microsoft JhengHei",sans-serif;line-height:1.6;padding:calc(64px + env(safe-area-inset-top,0px)) 16px calc(40px + env(safe-area-inset-bottom,0px))}
+main{max-width:560px;margin:0 auto}
+.box{background:var(--paper);border:3px solid var(--ink);border-radius:24px;padding:16px}
+section{margin-top:28px}
+h1,h2,h3,p{margin:0}
+h2{font-size:22px;margin-bottom:12px;display:flex;align-items:center;gap:8px}
+h2::before{content:"";width:16px;height:16px;border:3px solid var(--ink);border-radius:50%;background:var(--yellow)}
+nav{position:fixed;top:0;left:0;right:0;z-index:20;background:var(--paper);border-bottom:3px solid var(--ink);padding:calc(8px + env(safe-area-inset-top,0px)) 12px 8px}
+nav::before{content:"";position:absolute;left:0;right:0;top:calc(-1 * env(safe-area-inset-top,0px));height:env(safe-area-inset-top,0px);background:var(--paper)}
+nav div{display:flex;gap:8px;overflow-x:auto;max-width:560px;margin:0 auto;scrollbar-width:none}
+nav a{flex:none;color:var(--ink);text-decoration:none;font-size:15px;padding:4px 14px;border:3px solid var(--ink);border-radius:999px;background:var(--paper)}
+nav a:nth-child(4n+1){background:var(--pink)}nav a:nth-child(4n+2){background:var(--yellow)}nav a:nth-child(4n+3){background:var(--aqua)}nav a:nth-child(4n){background:var(--green)}
+a:focus-visible,button:focus-visible,input:focus-visible{outline:3px dashed var(--ink);outline-offset:3px}
+/* hero */
+.hero{background:var(--aqua);padding:0;overflow:hidden;text-align:center}
+.hero svg{display:block;width:100%;height:auto}
+.hero .txt{background:var(--paper);border-top:3px solid var(--ink);padding:16px}
+.hero h1{font-size:40px;line-height:1.2}
+.hero .sub{font-size:14px;margin-top:4px}
+.count{margin-top:12px;display:flex;flex-direction:column;align-items:center;gap:8px}
+.badge{display:inline-flex;align-items:baseline;gap:6px;background:var(--yellow);border:3px solid var(--ink);border-radius:999px;padding:6px 20px}
+.badge b{font-size:34px;line-height:1.1}
+.date{display:flex;align-items:center;gap:8px;font-size:14px}
+input[type=date],input[type=text]{font:inherit;color:var(--ink);background:var(--paper);border:3px solid var(--ink);border-radius:14px;padding:6px 10px;min-width:0}
+/* svg motion */
+.sun-rays{transform-box:fill-box;transform-origin:center;animation:spin 24s linear infinite}
+.cloud{animation:drift 9s ease-in-out infinite alternate}.cloud.b{animation-duration:12s;animation-delay:-4s}
+.train{animation:ride 14s linear infinite}
+.steam{animation:rise 3s ease-in-out infinite}.steam.b{animation-delay:-1.4s}
+.fish{transform-box:fill-box;transform-origin:center;animation:jump 4s ease-in-out infinite}
+.onion{transform-box:fill-box;transform-origin:50% 100%;animation:sway 3.5s ease-in-out infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes drift{to{transform:translateX(22px)}}
+@keyframes ride{from{transform:translateX(-90px)}to{transform:translateX(400px)}}
+@keyframes rise{0%{opacity:0;transform:translateY(6px)}50%{opacity:1}100%{opacity:0;transform:translateY(-10px)}}
+@keyframes jump{0%,60%,100%{transform:translateY(8px) rotate(-10deg)}80%{transform:translateY(-10px) rotate(15deg)}}
+@keyframes sway{0%,100%{transform:rotate(-4deg)}50%{transform:rotate(4deg)}}
+/* flight */
+.row{display:grid;gap:8px;margin-top:10px}
+.row label{font-size:14px;display:grid;gap:4px}
+.hint{font-size:13px;margin-top:10px}
+.pill{display:inline-block;font-size:13px;border:3px solid var(--ink);border-radius:999px;padding:0 10px;line-height:1.5;background:var(--aqua)}
+/* days */
+.tabs{display:flex;gap:10px;margin-bottom:16px}
+.tab{flex:1;font:inherit;font-size:18px;color:var(--ink);background:var(--paper);border:3px solid var(--ink);border-radius:20px;padding:8px;cursor:pointer}
+.tab small{display:block;font-size:12px}
+.tab[aria-selected=true]{background:var(--pink)}
+.tab.pop{animation:pop .5s cubic-bezier(.3,1.6,.5,1)}
+.tl.pop{animation:pop .5s cubic-bezier(.3,1.6,.5,1)}
+@keyframes pop{0%{transform:scale(.9) translateY(10px)}60%{transform:scale(1.04)}100%{transform:none}}
+.tl{list-style:none;margin:0;padding:0 0 0 28px;position:relative}
+.tl::before{content:"";position:absolute;left:9px;top:8px;bottom:8px;border-left:3px dashed var(--ink)}
+.tl li{position:relative;margin-bottom:12px;border:3px solid var(--ink);border-radius:20px;padding:10px 12px;background:var(--paper)}
+.tl li::before{content:"";position:absolute;left:-27px;top:16px;width:14px;height:14px;border:3px solid var(--ink);border-radius:50%;background:var(--c)}
+.tl li.must{background:#FFF5D6}
+.tl .t{font-size:17px}
+.tl .v{font-size:12px;margin-top:2px}
+.tag{display:inline-block;font-size:12px;border:3px solid var(--ink);border-radius:999px;padding:0 9px;line-height:1.4;margin-right:6px;background:var(--c)}
+.go{display:inline-block;font-size:12px;background:var(--pink);border:3px solid var(--ink);border-radius:999px;padding:0 9px;line-height:1.4;transform:rotate(-4deg)}
+.end{text-align:center;margin-top:8px}
+/* checklist */
+.ck{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.ck label{display:flex;align-items:center;gap:10px;border:3px solid var(--ink);border-radius:16px;padding:8px 12px;cursor:pointer}
+.ck input{appearance:none;flex:none;width:24px;height:24px;border:3px solid var(--ink);border-radius:8px;margin:0;background:var(--paper);display:grid;place-items:center}
+.ck input::after{content:"";width:6px;height:11px;border:solid var(--ink);border-width:0 3px 3px 0;transform:rotate(45deg) scale(0);transition:transform .2s cubic-bezier(.3,1.8,.5,1);margin-top:-2px}
+.ck input:checked{background:var(--green)}
+.ck input:checked::after{transform:rotate(45deg) scale(1)}
+.ck input:checked+span{text-decoration:line-through;opacity:.55}
+.prog{margin-left:auto;font-size:14px;background:var(--green);border:3px solid var(--ink);border-radius:999px;padding:0 12px}
+.stay dl{display:grid;grid-template-columns:auto 1fr;gap:6px 12px;margin:10px 0 0}
+.stay dt{font-size:14px}.stay dd{margin:0}
+footer{text-align:center;font-size:13px;margin-top:28px}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<nav aria-label="主選單"><div>
+<a href="#top">首頁</a><a href="#flight">交通</a><a href="#plan">行程</a><a href="#todo">待辦</a><a href="#stay">住宿</a><a href="#pre">出發前</a><a href="#bag">行李</a>
+</div></nav>
+<main id="top">
+<div class="box hero">
+<svg viewBox="0 0 360 230" role="img" aria-label="宜蘭插畫：太陽、火車、溫泉、青蔥與大溪漁港的魚" stroke="#3E3A39" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
+<g fill="#FFFCF6"><g class="cloud"><path d="M40 52h58a14 14 0 0 0-6-26 18 18 0 0 0-34-2 14 14 0 0 0-18 28z"/></g>
+<g class="cloud b"><path d="M178 36h42a11 11 0 0 0-4-20 14 14 0 0 0-26 0 11 11 0 0 0-12 20z"/></g></g>
+<g transform="translate(300 52)"><g class="sun-rays" fill="none"><path d="M0-40v-10M0 40v10M-40 0h-10M40 0h10M-28-28l-7-7M28 28l7 7M-28 28l-7 7M28-28l7-7"/></g><circle r="26" fill="#F6D27A"/></g>
+<path d="M0 150Q70 92 150 140T290 118T360 140V200H0z" fill="#B9DAA5"/>
+<path d="M0 172Q90 130 190 168T360 158V200H0z" fill="#B9DAA5" opacity="1"/>
+<path d="M0 200H360V230H0z" fill="#A8D3E6"/>
+<path d="M0 213q15-8 30 0t30 0 30 0 30 0 30 0 30 0 30 0 30 0 30 0 30 0 30 0 30 0" fill="none"/>
+<path d="M0 176H360" fill="none" stroke-dasharray="6 6"/>
+<g class="train"><rect x="0" y="152" width="62" height="22" rx="8" fill="#F2A497"/><rect x="8" y="158" width="12" height="9" rx="3" fill="#FFFCF6"/><rect x="26" y="158" width="12" height="9" rx="3" fill="#FFFCF6"/><rect x="44" y="158" width="12" height="9" rx="3" fill="#FFFCF6"/><circle cx="14" cy="176" r="4" fill="#F6D27A"/><circle cx="48" cy="176" r="4" fill="#F6D27A"/></g>
+<g transform="translate(262 186)"><ellipse rx="40" ry="12" fill="#A8D3E6"/><g fill="none"><path class="steam" d="M-14-14q-6-8 0-14t0-10"/><path class="steam b" d="M6-14q-6-8 0-14t0-10"/><path class="steam" d="M24-12q-6-8 0-14"/></g></g>
+<g transform="translate(70 224)"><g class="onion"><path d="M-8-60q-4-24-10-30M0-60q0-28 0-36M8-60q4-24 10-30" fill="none" stroke="#3E3A39"/><path d="M0-60q-26 10-26 34a26 26 0 0 0 52 0q0-24-26-34z" fill="#FFFCF6"/><path d="M0-58q-10 20 0 54" fill="none"/></g></g>
+<g transform="translate(180 212)"><g class="fish"><path d="M-18 0q18-16 36 0-18 16-36 0z M18 0l12-10v20z" fill="#F2A497"/><circle cx="-8" cy="-2" r="2" fill="#3E3A39" stroke="none"/></g></g>
+</svg>
+<div class="txt">
+<h1>出遊趣</h1>
+<p class="sub">宜蘭・頭城農場 2 天 1 夜<br>礁溪泡湯 × 農場 DIY × 大溪漁港</p>
+<div class="count"><div class="badge" id="cd"><span>選擇出發日期</span></div>
+<label class="date">出發日 <input type="date" id="dep"></label></div>
+</div></div>
+
+<section id="flight"><h2>交通資訊</h2>
+<div class="box" style="background:#EAF4F9">
+<span class="pill">行程資料未提供班次，可自行填寫</span>
+<div class="row">
+<label>去程（出發地 → 宜蘭）<input type="text" data-k="go" placeholder="例：台北 → 礁溪｜08:30 區間車"></label>
+<label>回程（大溪漁港 → 返家）<input type="text" data-k="back" placeholder="例：頭城 → 台北｜17:40"></label>
+</div></div></section>
+
+<section id="plan"><h2>每日行程</h2>
+<div class="tabs" role="tablist" id="tabs"></div>
+<ol class="tl" id="tl"></ol>
+<p class="end" id="end"></p>
+</section>
+
+<section id="todo"><h2>旅途待辦<span class="prog" id="p-todo"></span></h2><ul class="ck" id="l-todo"></ul></section>
+
+<section id="stay"><h2>住宿資訊</h2>
+<div class="box stay" style="background:#FFF5D6"><h3>頭城休閒農場</h3>
+<dl><dt>入住</dt><dd>第 1 天抵達頭城後 Check in</dd>
+<dt>退房</dt><dd>第 2 天早餐、生態導覽後退房</dd>
+<dt>離場</dt><dd>下午 15:00 離開農場</dd>
+<dt>餐食</dt><dd>晚餐 Buffet、隔天午餐 Buffet</dd></dl>
+<div class="row"><label>訂房備註（訂單編號、電話…）<input type="text" data-k="stay" placeholder="自行填寫"></label></div></div></section>
+
+<section id="pre"><h2>出發前清單<span class="prog" id="p-pre"></span></h2><ul class="ck" id="l-pre"></ul></section>
+<section id="bag"><h2>行李清單<span class="prog" id="p-bag"></span></h2><ul class="ck" id="l-bag"></ul></section>
+<footer>祝你旅途愉快！</footer>
+</main>
+<script>
+var C={"餐":"var(--pink)","行":"var(--aqua)","玩":"var(--green)","宿":"var(--yellow)"};
+var N={"餐":"美食","行":"交通","玩":"體驗","宿":"住宿"};
+// [類型, 標題, 影片時間, 必去]
+var D=[
+[["餐","早餐｜礁溪星寶蔥達人","1:08~3:11"],["玩","湯圍溝溫泉","",1],["玩","小魚吃腳"],["餐","午餐｜礁溪三星蔥牛肉麵","5:06~7:03",1],["行","前往頭城"],["玩","頭城休閒農場","7:41~45:43",1],["宿","Check in"],["餐","點心"],["玩","蔬菜煎餅 DIY","15:53"],["玩","草本手作 DIY－香膏","19:35"],["餐","晚餐 Buffet"]],
+[["餐","早餐"],["玩","園區生態導覽","27:48"],["宿","退房"],["餐","點心"],["玩","農產品 DIY｜果醋","36:47"],["餐","午餐 Buffet"],["玩","葉拓 DIY","42:29"],["餐","點心"],["行","PM 15:00 離開頭城農場"],["玩","大溪漁港","45:52~49:16",1]]];
+var L={todo:["泡湯放鬆（湯圍溝溫泉）","吃礁溪蔥牛肉麵","小魚吃腳","做蔬菜煎餅","做草本香膏","農場生態導覽","做果醋","做葉拓","逛大溪漁港"],
+pre:["確認住宿訂房","預約 DIY 體驗","確認交通班次","查天氣預報","準備現金與信用卡","手機與行動電源充飽","把行程分享給家人"],
+bag:["換洗衣物","泳衣・泳帽（泡溫泉）","毛巾","好走的鞋","拖鞋","帽子・防曬","雨具","盥洗用品","充電器・線材","常備藥品","環保袋","相機"]};
+function sget(k){try{return localStorage.getItem("yl-"+k)}catch(e){return null}}
+function sset(k,v){try{localStorage.setItem("yl-"+k,v)}catch(e){}}
+var dep=document.getElementById("dep"),cd=document.getElementById("cd"),cur=0;
+function fmt(i){var v=dep.value;if(!v)return"";var d=new Date(v+"T00:00:00");d.setDate(d.getDate()+i);return(d.getMonth()+1)+"/"+d.getDate()}
+function count(){var v=dep.value;if(!v){cd.innerHTML="<span>選擇出發日期</span>";return}
+var t=new Date();t.setHours(0,0,0,0);var n=Math.round((new Date(v+"T00:00:00")-t)/864e5);
+cd.innerHTML=n>0?"<span>還有</span><b>"+n+"</b><span>天出發</span>":n===0?"<b>今天</b><span>出發！</span>":"<span>旅程進行中或已結束</span>"}
+function tabs(){var h="";D.forEach(function(_,i){h+='<button class="tab" role="tab" aria-selected="'+(i===cur)+'" data-i="'+i+'">Day '+(i+1)+(fmt(i)?"<small>"+fmt(i)+"</small>":"<small>"+(i?"回家前的收尾":"抵達宜蘭")+"</small>")+"</button>"});document.getElementById("tabs").innerHTML=h}
+function plan(bounce){var tl=document.getElementById("tl"),h="";
+D[cur].forEach(function(r){h+='<li style="--c:'+C[r[0]]+'"'+(r[3]?' class="must"':"")+'><span class="tag">'+N[r[0]]+"</span>"+(r[3]?'<span class="go">必去</span>':"")+'<div class="t">'+r[1]+"</div>"+(r[2]?'<div class="v">影片 '+r[2]+"</div>":"")+"</li>"});
+tl.innerHTML=h;document.getElementById("end").textContent=cur===1?"超充實旅程結束。":"";
+if(bounce){tl.classList.remove("pop");void tl.offsetWidth;tl.classList.add("pop");var b=document.querySelector('.tab[data-i="'+cur+'"]');if(b){b.classList.add("pop")}}}
+document.getElementById("tabs").addEventListener("click",function(e){var b=e.target.closest(".tab");if(!b)return;cur=+b.dataset.i;tabs();plan(true);var a=document.querySelector('.tab[data-i="'+cur+'"]');a.classList.remove("pop");void a.offsetWidth;a.classList.add("pop")});
+dep.value=sget("dep")||"";dep.addEventListener("change",function(){sset("dep",dep.value);count();tabs()});
+function lists(){Object.keys(L).forEach(function(k){var ul=document.getElementById("l-"+k),st={};try{st=JSON.parse(sget("ck-"+k)||"{}")}catch(e){}
+ul.innerHTML=L[k].map(function(t,i){return'<li><label><input type="checkbox" data-k="'+k+'" data-i="'+i+'"'+(st[i]?" checked":"")+"><span>"+t+"</span></label></li>"}).join("");prog(k)})}
+function prog(k){var n=document.querySelectorAll('#l-'+k+' input:checked').length;document.getElementById("p-"+k).textContent=n+"/"+L[k].length}
+document.addEventListener("change",function(e){var t=e.target;if(t.type!=="checkbox")return;var k=t.dataset.k,st={};document.querySelectorAll("#l-"+k+" input").forEach(function(x){if(x.checked)st[x.dataset.i]=1});sset("ck-"+k,JSON.stringify(st));prog(k)});
+document.querySelectorAll("input[data-k]:not([type=checkbox])").forEach(function(i){i.value=sget("f-"+i.dataset.k)||"";i.addEventListener("input",function(){sset("f-"+i.dataset.k,i.value)})});
+count();tabs();plan(false);lists();
+</script>
+</body>
+</html>
